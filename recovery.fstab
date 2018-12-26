@@ -14,12 +14,24 @@
 # limitations under the License.
 #
 
-/boot emmc /dev/block/bootdevice/by-name/boot
-/data ext4 /dev/block/bootdevice/by-name/userdata
-/system ext4 /dev/block/bootdevice/by-name/system
-/cache ext4 /dev/block/bootdevice/by-name/cache
-/misc emmc /dev/block/bootdevice/by-name/misc
-/recovery emmc /dev/block/bootdevice/by-name/recovery
-/usb-otg auto /dev/block/sda1 /dev/block/sda flags=display="USB OTG";storage;wipeingui;removable
-/external_sd vfat /dev/block/mmcblk1p1 /dev/block/mmcblk1 flags=display="Micro SDcard";storage;wipeingui;removable
+#<src>		                            <mnt_point> <type>	<mnt_flags and options>	<fs_mgr_flags>
+
+/dev/block/bootdevice/by-name/system     /system     ext4      defaults        defaults
+/dev/block/bootdevice/by-name/vendor     /vendor     ext4      defaults        defaults
+/dev/block/bootdevice/by-name/product    /product    ext4      defaults        defaults
+/dev/block/bootdevice/by-name/version    /version    ext4      defaults        defaults
+/dev/block/bootdevice/by-name/cache      /cache      ext4      defaults        defaults
+/dev/block/bootdevice/by-name/userdata   /data       f2fs      nosuid,nodev,noatime,inline_xattr,data_flush			wait,check,encryptable,formattable,length=-16384
+/dev/block/bootdevice/by-name/userdata   /data       ext4	   nosuid,nodev,noatime,noauto_da_alloc
+/dev/block/bootdevice/by-name/boot       /boot       emmc      defaults        defaults
+/dev/block/bootdevice/by-name/recovery   /recovery   emmc      defaults        defaults
+#/dev/block/bootdevice/by-name/system     /newsys     ext4      defaults        defaults
+/dev/block/bootdevice/by-name/cust       /cust       ext4      defaults        defaults
+/dev/block/bootdevice/by-name/misc       /misc       emmc      defaults        defaults
+/dev/block/bootdevice/by-name/modem      /firmware   vfat      defaults        defaults
+/dev/block/bootdevice/by-name/log        /log        vfat      defaults        defaults
+
+/dev/block/sda                           /usb-otg    auto      flags=display="USB OTG";storage;wipeingui;removable
+/dev/block/mmcblk1p1                     /sdcard     vfat      flags=display="Micro SDcard";storage;wipeingui;removable
+
 

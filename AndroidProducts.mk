@@ -14,6 +14,6 @@
 # limitations under the License.
 #
 
-LOCAL_PATH := device/android/msm8937_64/
+LOCAL_PATH := device/honor/msm8937_64/
 
 PRODUCT_MAKEFILES := $(LOCAL_PATH)/omni_msm8937_64.mk

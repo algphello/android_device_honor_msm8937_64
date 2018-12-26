@@ -16,7 +16,7 @@
 
 ifneq ($(filter msm8937_64,$(TARGET_DEVICE)),)
 
-LOCAL_PATH := device/android/msm8937_64/
+LOCAL_PATH := device/honor/msm8937_64/
 
 include $(call all-makefiles-under,$(LOCAL_PATH))
 
