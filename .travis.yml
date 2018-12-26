@@ -5,8 +5,7 @@ before_install:
   - docker pull yshalsager/lineageos:14.1
 before_script:
   - cd $HOME && mkdir twrp
-  - wget -q https://github.com/TwrpBuilder/twrp-sources/releases/download/omni_twrp-8.1-20180221-norepo/omni_twrp-8.1-20180221-norepo.tar.xz
-    -O $HOME/twrp.tar.xz
+  - wget -q https://basketbuild.com/filedl/devs?dev=yshalsager&dl=yshalsager/CAS/twrp/omni_twrp-8.1-20180221-repo.tar.xz -O $HOME/twrp.tar.xz
   - tar -xJf twrp.tar.xz --directory $HOME/twrp/ && rm twrp.tar.xz
 script:
   - cd $HOME/twrp/ && git clone https://github.com/ALGPHELLO/android_device_honor_msm8937_64.git device/android/msm8937_64
