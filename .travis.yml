@@ -11,7 +11,7 @@ before_script:
 script:
   - cd $HOME/twrp/ && git clone https://github.com/ALGPHELLO/android_device_honor_msm8937_64.git device/android/msm8937_64
   - git clone https://github.com/TwrpBuilder/device_generic_twrpbuilder.git device/generic/twrpbuilder
-  - rm -rf prebuilts/clang/host/linux-x86 && git clone https://android.googlesource.com/platform/prebuilts/clang/host/linux-x86 prebuilts/clang/host/linux-x86 -b android-8.1.0_r53 --depth=1
+  - rm -rf prebuilts/clang/host/linux-x86 && git clone https://android.googlesource.com/platform/prebuilts/clang/host/linux-x86 prebuilts/clang/host/linux-x86 -b android-8.0.0_r34 --depth=1
   - rm -rf bootable/recovery && git clone https://github.com/omnirom/android_bootable_recovery.git bootable/recovery --depth=1
   - |
     docker run --rm -i -e USER_ID=$(id -u) -e GROUP_ID=$(id -g) -v "$(pwd):/home/twrp/:rw,z" yshalsager/lineageos:14.1 bash << EOF
