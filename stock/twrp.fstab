@@ -1,6 +1,5 @@
-# Android fstab file.
-# The filesystem that contains the filesystem checker binary (typically /system) cannot
-# specify MF_CHECK, and must come before any filesystems that do specify MF_CHECK
+# mount point	              fstype		device
+#twrp.fstab
 
 /system                ext4     /dev/block/bootdevice/by-name/system                flags=display="System"
 /data                  f2fs     /dev/block/bootdevice/by-name/userdata              flags=display="Data";length=-16384
