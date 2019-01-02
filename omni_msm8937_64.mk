@@ -17,6 +17,6 @@
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base.mk)
 PRODUCT_DEVICE := msm8937_64
 PRODUCT_NAME := omni_msm8937_64
-PRODUCT_BRAND := honor
-PRODUCT_MODEL := HONOR 7A
-PRODUCT_MANUFACTURER := huawei
+PRODUCT_BRAND := Honor
+PRODUCT_MODEL := AUM-L29
+PRODUCT_MANUFACTURER := Huawei
