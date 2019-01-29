@@ -53,7 +53,7 @@ BOARD_RECOVERY_SWIPE := true
 BOARD_USES_MMCUTILS := true
 BOARD_SUPPRESS_EMMC_WIPE := true
 #TW_INPUT_BLACKLIST := "hbtp_vm"
-
+BOARD_ROOT_EXTRA_FOLDERS := bt_firmware cache dsp firmware persist
 include $(LOCAL_PATH)/kernel.mk
 
 # TWRP
