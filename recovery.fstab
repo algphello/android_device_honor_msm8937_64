@@ -2,55 +2,62 @@
 # The filesystem that contains the filesystem checker binary (typically /system) cannot
 # specify MF_CHECK, and must come before any filesystems that do specify MF_CHECK
 
-/system                		ext4     /dev/block/bootdevice/by-name/system                flags=display="System";backup=1
-/vendor                		ext4     /dev/block/bootdevice/by-name/vendor                flags=display="Vendor";backup=1
-/product               		ext4     /dev/block/bootdevice/by-name/product               flags=display="Product";backup=1
-/version               		ext4     /dev/block/bootdevice/by-name/version               flags=display="Version";backup=1
-/cache                 		ext4     /dev/block/bootdevice/by-name/cache                 flags=display="Cache";backup=1
-/data                  		f2fs     /dev/block/bootdevice/by-name/userdata              flags=display="Data";length=-16384
-/cust                  		ext4     /dev/block/bootdevice/by-name/cust                  flags=display="Cust";backup=1
-/misc                  		emmc     /dev/block/bootdevice/by-name/misc                  flags=display="Misc";backup=1
-/erecovery_kernel      		emmc     /dev/block/bootdevice/by-name/erecovery_kernel      flags=display="eRecovery Kernel";backup=1
-/erecovery_ramdisk     		emmc     /dev/block/bootdevice/by-name/erecovery_ramdisk     flags=display="eRecovery Ramdisk";backup=1
-/erecovery_vendor      		emmc     /dev/block/bootdevice/by-name/erecovery_vendor      flags=display="eRecovery Vendor";backup=1
-/kernel                		emmc     /dev/block/bootdevice/by-name/kernel                flags=display="Kernel";backup=1
-/ramdisk               		emmc     /dev/block/bootdevice/by-name/ramdisk               flags=display="Boot Ramdisk";backup=1
-/recovery_ramdisk      		emmc     /dev/block/bootdevice/by-name/recovery_ramdisk      flags=display="Recovery Ramdisk";backup=1
-/recovery_vendor       		emmc     /dev/block/bootdevice/by-name/recovery_vendor       flags=display="Recovery Vendor";backup=1
+/sbl1						emmc	/dev/block/platform/soc/7824900.sdhci/by-name/sbl1						flags=display="sbl1";backup=1;flashimg=1
+/rpm						emmc	/dev/block/platform/soc/7824900.sdhci/by-name/rpm						flags=display="rpm";backup=1;flashimg=1
+/tz							emmc	/dev/block/platform/soc/7824900.sdhci/by-name/tz						flags=display="tz";backup=1;flashimg=1
+/devcfg						emmc	/dev/block/platform/soc/7824900.sdhci/by-name/devcfg					flags=display="devcfg";backup=1;flashimg=1
+/dsp						ext4	/dev/block/platform/soc/7824900.sdhci/by-name/dsp						flags=display="dsp";backup=1;flashimg=1
+/keystore					emmc	/dev/block/platform/soc/7824900.sdhci/by-name/keystore					flags=display="keystore";backup=1;flashimg=1
+/frp						emmc	/dev/block/platform/soc/7824900.sdhci/by-name/frp						flags=display="frp";backup=1;flashimg=1
+/mota						emmc	/dev/block/platform/soc/7824900.sdhci/by-name/mota						flags=display="mota";backup=1;flashimg=1
+/dip						emmc	/dev/block/platform/soc/7824900.sdhci/by-name/dip						flags=display="dip";backup=1;flashimg=1
+/syscfg						emmc	/dev/block/platform/soc/7824900.sdhci/by-name/syscfg					flags=display="syscfg";backup=1;flashimg=1
+/lksecapp					emmc	/dev/block/platform/soc/7824900.sdhci/by-name/lksecapp					flags=display="lksecapp";backup=1;flashimg=1
+/apdp						emmc	/dev/block/platform/soc/7824900.sdhci/by-name/apdp						flags=display="apdp";backup=1;flashimg=1
+/msadp						emmc	/dev/block/platform/soc/7824900.sdhci/by-name/msadp						flags=display="msadp";backup=1;flashimg=1
+/dpo						emmc	/dev/block/platform/soc/7824900.sdhci/by-name/dpo						flags=display="dpo";backup=1;flashimg=1
+/fsc						emmc	/dev/block/platform/soc/7824900.sdhci/by-name/fsc						flags=display="fsc";backup=1;flashimg=1
+/ssd						emmc	/dev/block/platform/soc/7824900.sdhci/by-name/ssd						flags=display="ssd";backup=1;flashimg=1
+/bootfail_info				emmc	/dev/block/platform/soc/7824900.sdhci/by-name/bootfail_info				flags=display="bootfail_info";backup=1;flashimg=1
+/pad0						emmc	/dev/block/platform/soc/7824900.sdhci/by-name/pad0						flags=display="pad0";backup=1;flashimg=1
+/aboot						emmc	/dev/block/platform/soc/7824900.sdhci/by-name/aboot						flags=display="aboot";backup=1;flashimg=1
+/cmnlib						emmc	/dev/block/platform/soc/7824900.sdhci/by-name/cmnlib					flags=display="cmnlib";backup=1;flashimg=1
+/cmnlib64					emmc	/dev/block/platform/soc/7824900.sdhci/by-name/cmnlib64					flags=display="cmnlib64";backup=1;flashimg=1
+/keymaster					emmc	/dev/block/platform/soc/7824900.sdhci/by-name/keymaster					flags=display="keymaster";backup=1;flashimg=1
+/pad1						emmc	/dev/block/platform/soc/7824900.sdhci/by-name/pad1						flags=display="pad1";backup=1;flashimg=1
+/fsg						emmc	/dev/block/platform/soc/7824900.sdhci/by-name/fsg						flags=display="fsg";backup=1;flashimg=1
+/DDR						emmc	/dev/block/platform/soc/7824900.sdhci/by-name/DDR						flags=display="DDR";backup=1;flashimg=1
+/sec						emmc	/dev/block/platform/soc/7824900.sdhci/by-name/sec						flags=display="sec";backup=1;flashimg=1
+/devinfo					emmc	/dev/block/platform/soc/7824900.sdhci/by-name/devinfo					flags=display="devinfo";backup=1;flashimg=1
+/limits						emmc	/dev/block/platform/soc/7824900.sdhci/by-name/limits					flags=display="limits";backup=1;flashimg=1
+/pad2						emmc	/dev/block/platform/soc/7824900.sdhci/by-name/pad2						flags=display="pad2";backup=1;flashimg=1
+/oeminfo					emmc	/dev/block/platform/soc/7824900.sdhci/by-name/oeminfo					flags=display="oeminfo";backup=1;flashimg=1
+/misc						emmc	/dev/block/platform/soc/7824900.sdhci/by-name/misc						flags=display="misc";backup=1;flashimg=1
+/modemst1					emmc	/dev/block/platform/soc/7824900.sdhci/by-name/modemst1					flags=display="modemst1";backup=1;flashimg=1
+/modemst2					emmc	/dev/block/platform/soc/7824900.sdhci/by-name/modemst2					flags=display="modemst2";backup=1;flashimg=1
+/rrecord					emmc	/dev/block/platform/soc/7824900.sdhci/by-name/rrecord					flags=display="rrecord";backup=1;flashimg=1
+/nff						emmc	/dev/block/platform/soc/7824900.sdhci/by-name/nff						flags=display="nff";backup=1;flashimg=1
+/mcfg						emmc	/dev/block/platform/soc/7824900.sdhci/by-name/mcfg						flags=display="mcfg";backup=1;flashimg=1
+/firmware					vfat	/dev/block/platform/soc/7824900.sdhci/by-name/modem						flags=display="modem";backup=1;flashimg=1
+/erecovery_kernel			emmc	/dev/block/platform/soc/7824900.sdhci/by-name/erecovery_kernel			flags=display="erecovery_kernel";backup=1;flashimg=1
+/erecovery_ramdisk			emmc	/dev/block/platform/soc/7824900.sdhci/by-name/erecovery_ramdisk			flags=display="erecovery_ramdisk";backup=1;flashimg=1
+/erecovery_vendor			emmc	/dev/block/platform/soc/7824900.sdhci/by-name/erecovery_vendor			flags=display="erecovery_vendor";backup=1;flashimg=1
+/kernel						emmc	/dev/block/platform/soc/7824900.sdhci/by-name/kernel					flags=display="kernel";backup=1;flashimg=1
+/ramdisk					emmc	/dev/block/platform/soc/7824900.sdhci/by-name/ramdisk					flags=display="ramdisk";backup=1;flashimg=1
+/recovery_ramdisk			emmc	/dev/block/platform/soc/7824900.sdhci/by-name/recovery_ramdisk			flags=display="recovery_ramdisk";backup=1;flashimg=1
+/recovery_vendor			emmc	/dev/block/platform/soc/7824900.sdhci/by-name/recovery_vendor			flags=display="recovery_vendor";backup=1;flashimg=1
+/cache						ext4	/dev/block/platform/soc/7824900.sdhci/by-name/cache						flags=display="cache";backup=1;flashimg=1
+/odm						ext4	/dev/block/platform/soc/7824900.sdhci/by-name/odm						flags=display="odm";backup=1;flashimg=1
+/persist					ext4	/dev/block/platform/soc/7824900.sdhci/by-name/persist					flags=display="persist";backup=1;flashimg=1
+/log						vfat	/dev/block/platform/soc/7824900.sdhci/by-name/log						flags=display="log";backup=1;flashimg=1
+/patch						emmc	/dev/block/platform/soc/7824900.sdhci/by-name/patch						flags=display="patch";backup=1;flashimg=1
+/version					ext4	/dev/block/platform/soc/7824900.sdhci/by-name/version					flags=display="version";backup=1;flashimg=1
+/vendor						ext4	/dev/block/platform/soc/7824900.sdhci/by-name/vendor					flags=display="vendor";backup=1;flashimg=1
+/product					ext4	/dev/block/platform/soc/7824900.sdhci/by-name/product					flags=display="product";backup=1;flashimg=1
+/cust						ext4	/dev/block/platform/soc/7824900.sdhci/by-name/cust						flags=display="cust";backup=1;flashimg=1
+/system						ext4	/dev/block/platform/soc/7824900.sdhci/by-name/system					flags=display="system";backup=1;flashimg=1
+/data						f2fs	/dev/block/platform/soc/7824900.sdhci/by-name/userdata					flags=display="userdata";backup=1;flashimg=1
 
-/aboot                 		emmc     /dev/block/bootdevice/by-name/aboot                 flags=display="Aboot";backup=1
-/dsp                   		ext4     /dev/block/bootdevice/by-name/dsp                   flags=display="Dsp";backup=1
-/efs1                  		emmc     /dev/block/bootdevice/by-name/modemst1              flags=display="Efs";backup=1
-/efs2                  		emmc     /dev/block/bootdevice/by-name/modemst2              flags=display="Efs2";backup=1;subpartitionof=/efs1
-/firmware              		vfat     /dev/block/bootdevice/by-name/modem                 flags=display="Firmware";backup=1;mounttodecrypt
-/frp                   		emmc     /dev/block/bootdevice/by-name/frp                   flags=display="Frp";backup=1
-/odm                   		ext4     /dev/block/bootdevice/by-name/odm                   flags=display="Odm";backup=1
-/oeminfo               		emmc     /dev/block/bootdevice/by-name/oeminfo               flags=display="OemInfo";backup=1
-/persist               		ext4     /dev/block/bootdevice/by-name/persist               flags=display="Persist";backup=1
-/rpm                   		emmc     /dev/block/bootdevice/by-name/rpm                   flags=display="Rpm";backup=1
-/sbl1                  		emmc     /dev/block/bootdevice/by-name/sbl1                  flags=display="Sbl1";backup=1
-/tz                    		emmc     /dev/block/bootdevice/by-name/tz                    flags=display="Tz";backup=1
-
-/system_image          		emmc     /dev/block/bootdevice/by-name/system                flags=display="System Image";flashimg=1
-/vendor_image          		emmc     /dev/block/bootdevice/by-name/vendor                flags=display="Vendor Image";flashimg=1
-/product_image         		emmc     /dev/block/bootdevice/by-name/product               flags=display="Product Image";flashimg=1
-/version_image         		emmc     /dev/block/bootdevice/by-name/version               flags=display="Version Image";flashimg=1
-/cust_image            		emmc     /dev/block/bootdevice/by-name/cust                  flags=display="Cust Image";flashimg=1
-/kernel_image               emmc     /dev/block/bootdevice/by-name/kernel                flags=display="Kernel Image";backup=1
-/erecovery_kernel_image     emmc     /dev/block/bootdevice/by-name/erecovery_kernel      flags=display="eRecovery Kernel Image";flashimg=1
-/erecovery_ramdisk_image    emmc     /dev/block/bootdevice/by-name/erecovery_ramdisk     flags=display="eRecovery Ramdisk Image";flashimg=1
-/erecovery_vendor_image     emmc     /dev/block/bootdevice/by-name/erecovery_vendor      flags=display="eRecovery Vendor Image";flashimg=1
-/ramdisk_image              emmc     /dev/block/bootdevice/by-name/ramdisk               flags=display="Boot Ramdisk Image";flashimg=1
-/recovery_ramdisk_image     emmc     /dev/block/bootdevice/by-name/recovery_ramdisk      flags=display="Recovery Ramdisk Image";flashimg=1
-/recovery_vendor_image      emmc     /dev/block/bootdevice/by-name/recovery_vendor       flags=display="Recovery Vendor Image";flashimg=1
-/odm_image             		emmc     /dev/block/bootdevice/by-name/odm                   flags=display="Odm Image";flashimg=1
-/oeminfo_image              emmc     /dev/block/bootdevice/by-name/oeminfo               flags=display="OemInfo Image";flashimg=1
-/persist_image              emmc     /dev/block/bootdevice/by-name/persist               flags=display="Persist Image";flashimg=1
-/frp_image                  emmc     /dev/block/bootdevice/by-name/frp                   flags=display="Frp Image";flashimg=1
-/dsp_image                  emmc     /dev/block/bootdevice/by-name/dsp                   flags=display="Dsp Image";flashimg=1
-/rpm_image                  emmc     /dev/block/bootdevice/by-name/rpm                   flags=display="Rpm Image";flashimg=1
-/sbl1_image                 emmc     /dev/block/bootdevice/by-name/sbl1                  flags=display="Sbl1 Image";flashimg=1
-/tz_image                   emmc     /dev/block/bootdevice/by-name/tz                    flags=display="Tz Image";flashimg=1
-
-/external_sd      	     	vfat     /dev/block/mmcblk1p1                                flags=display="MicroSD";storage;wipeingui;removable
-/usb-otg               		auto     /dev/block/sda1                                     flags=display="USB Storage";storage;wipeingui;removable
+/sdcard1					auto	/dev/block/platform/soc/7864900.sdhci/mmcblk1							flags=display="INTERNAL STORAGE";auto;encryptable=userdata
+/external_sd				auto	/dev/block/platform/soc/7864900.sdhci/mmcblk1p1							flags=display="EXTERNAL SD";storage;wipeingui;removable
+/usb-otg					auto	/dev/block/platform/soc/78db000.usb/msm_hsusb_host*						flags=display="USB OTG";storage;wipeingui;removable
