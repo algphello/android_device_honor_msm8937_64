@@ -18,4 +18,7 @@ LOCAL_PATH := device/honor/msm8937_64/
 
 PRODUCT_MAKEFILES := $(LOCAL_PATH)/omni_msm8937_64.mk
 PRODUCT_COPY_FILES += \
-	$(LOCAL_PATH)/stock/*:$(LOCAL_PATH)
+	$(LOCAL_PATH)/stock/dload/*:$(LOCAL_PATH) \
+	$(LOCAL_PATH)/stock/erecovery_root_cacerts/*:$(LOCAL_PATH) \
+	$(LOCAL_PATH)/stock/system/*:$(LOCAL_PATH) \
+	$(LOCAL_PATH)/stock/vendor/*:$(LOCAL_PATH)
